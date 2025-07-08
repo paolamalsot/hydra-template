@@ -1,0 +1,24 @@
+# @package hydra.launcher
+
+defaults:
+  - submitit_slurm
+
+timeout_min: 180 # 2 hours
+#tasks_per_node: 4
+#nodes: null
+#ntasks: 1
+cpus_per_task: 4
+_target_: hydra_plugins.hydra_submitit_launcher.submitit_launcher.SlurmLauncher
+#name: ${hydra.job.name}
+comment: null
+exclude: null
+signal_delay_s: 600
+max_num_timeout: 20
+additional_parameters: {}
+setup: []
+constraint: null                  
+mem_per_cpu: 50G
+#partition: cpu
+#partition: gpu
+#gres: gpu:1
+#to use with a combination of - override hydra/launcher: cluster_gpu_2h

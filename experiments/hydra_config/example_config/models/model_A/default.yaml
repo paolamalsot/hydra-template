@@ -1,0 +1,7 @@
+model:
+  _target_: src.model.Model_A
+  parameter_1: 42
+  parameter_2:
+    _target_: src.submodel_B.SubModel
+    parameter_2: 24
+  parameter_3: null

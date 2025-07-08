@@ -1,0 +1,21 @@
+defaults:
+  - ../hydra/output_structure/default@_here_
+  - models/model_A/default@_here_
+  - _self_
+  
+  #- override hydra/launcher: ../../../hydra/launcher/cluster_4G
+
+experiment_output_dir: "results/example_hydra"
+
+hydra:
+  sweeper:
+    params:
+      model.parameter_1: 2,3,4,5
+  job:
+    chdir: true
+
+  #launcher:
+  #  mem_per_cpu: 10G
+  #  timeout_min: 660
+
+parsing_fun: experiments.src.main
